@@ -12,6 +12,6 @@ describe ToDoList do
    todolist.add("testitem1")
    todolist.add("testitem2")
    expect(todolist.list).to eq "1. testitem1\n2. testitem2\n"
-
  end
+ 
 end
