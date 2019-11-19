@@ -11,4 +11,14 @@ class ToDoList
     @items << item
   end
 
+  def list
+    output = ""
+    index = 1
+    @items.each do |item|
+      output += "#{index}. #{item}\n"
+      index += 1
+    end
+    output
+  end
+
 end
