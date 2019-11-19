@@ -6,7 +6,7 @@ class ToDoListApp < Sinatra::Base
   $todolist = ToDoList.new
 
   get '/' do
-    'Hello world'
+    erb :home
   end
 
   get '/todolist' do
