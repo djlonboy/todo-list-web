@@ -24,14 +24,14 @@ describe ToDoList do
  it 'returns an error if the item to complete is not in arry' do
    todolist = ToDoList.new
    todolist.add("testitem1")
-   expect{ todolist.complete(2) }.to raise_error("Item not in array")
+   expect(todolist.complete(2)).to eq("Item not in array")
  end
 
  it 'returns an error if thr item to complete is already completed' do
    todolist = ToDoList.new
    todolist.add("testitem1")
    todolist.complete(1)
-   expect{ todolist.complete(1) }.to raise_error("Item already completed")
+   expect(todolist.complete(1)).to eq("Item already completed")
  end
 
 end
