@@ -27,6 +27,7 @@ class ToDoList
     lastchars = @items[indexnumber].to_s.split("").last(8).join("")
     return "Item already completed" if lastchars == "Complete"
     @items[indexnumber] += " - Complete"
+    nil
   end
 
 end

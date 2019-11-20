@@ -31,7 +31,7 @@ class ToDoListApp < Sinatra::Base
 
   post '/mark-complete-do' do
     number = params['itemnumber'].to_i
-      $todolist.complete(number)
+    $returnstring = $todolist.complete(number)
     redirect('/todolist')
   end
 

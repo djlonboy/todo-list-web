@@ -20,7 +20,7 @@ feature "Complete item:" do
     expect(page).to have_content 'Buy stamps - Complete'
   end
 
-  scenario "Should return an error if the item is alreasdy complete" do
+  scenario "Should return an error if the item is already complete" do
     visit '/add-item'
     fill_in('item', :with => 'Buy stamps')
     click_button('submit')
@@ -31,5 +31,15 @@ feature "Complete item:" do
     fill_in('itemnumber', :with => '1')
     click_button('submit')
     expect(page).to have_content 'Item already completed'
+  end
+
+  scenario "Should return an error if the item is not in array" do
+    visit '/add-item'
+    fill_in('item', :with => 'Buy stamps')
+    click_button('submit')
+    visit "/mark-complete"
+    fill_in('itemnumber', :with => '5')
+    click_button('submit')
+    expect(page).to have_content 'Item not in array'
   end
 end
