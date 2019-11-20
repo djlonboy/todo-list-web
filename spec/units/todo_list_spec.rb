@@ -14,4 +14,11 @@ describe ToDoList do
    expect(todolist.list).to eq "1. testitem1<br>2. testitem2<br>"
  end
 
+ it 'can mark items as complete' do
+   todolist = ToDoList.new
+   todolist.add("testitem1")
+   todolist.complete(1)
+   expect(todolist.list).to eq "1. testitem1 - Complete<br>"
+ end
+
 end

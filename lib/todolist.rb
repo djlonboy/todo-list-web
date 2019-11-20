@@ -21,4 +21,9 @@ class ToDoList
     output
   end
 
+  def complete(itemnumber)
+    indexnumber = itemnumber - 1
+    @items[indexnumber] += " - Complete"
+  end
+
 end
