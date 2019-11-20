@@ -1,0 +1,9 @@
+<h1>Mark Item Complete</h1>
+<p></p>
+<div><%= @list %></div>
+<p></p>
+To mark an item complete, enter the item number and click sumbit.
+<form action="/mark-complete-do" method="POST">
+  Item number:&nbsp<input name="itemnumber"></input><br>
+  <input type="submit" value="submit">
+</form>

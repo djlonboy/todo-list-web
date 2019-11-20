@@ -24,5 +24,16 @@ class ToDoListApp < Sinatra::Base
     redirect('/todolist')
   end
 
+  get '/mark-complete' do
+    @list = $todolist.list
+    erb :markcomplete
+  end
+
+  post '/mark-complete-do' do
+    number = params['itemnumber'].to_i
+    $todolist.complete(number)
+    redirect('/todolist')
+  end
+
   run! if app_file == $0
 end

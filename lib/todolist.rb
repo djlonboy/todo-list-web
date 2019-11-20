@@ -22,7 +22,10 @@ class ToDoList
   end
 
   def complete(itemnumber)
-    indexnumber = itemnumber - 1
+    indexnumber = itemnumber.to_i - 1
+    raise "Item not in array" if itemnumber > @items.count
+    lastchars = @items[indexnumber].to_s.split("").last(8).join("")
+    raise "Item already completed" if lastchars == "Complete"
     @items[indexnumber] += " - Complete"
   end
 
