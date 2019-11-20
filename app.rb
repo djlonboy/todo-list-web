@@ -10,20 +10,18 @@ class ToDoListApp < Sinatra::Base
   end
 
   get '/todolist' do
-    #todo - write the code which reads items from $todolist
     @list = $todolist.list
     erb :todos
   end
 
-  post '/add-item' do
-    item = params['item']
-    #todo - write the code which adds an item to $todolist
-
-    redirect('/todolist')
+  get '/add-item' do
+    erb :additem
   end
 
-  get '/add-item-input' do
-    erb :add_item
+  post '/add-item-do' do
+    item = params['item']
+    $todolist.add(item)
+    redirect('/todolist')
   end
 
   run! if app_file == $0

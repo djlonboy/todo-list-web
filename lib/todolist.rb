@@ -15,7 +15,7 @@ class ToDoList
     output = ""
     index = 1
     @items.each do |item|
-      output += "#{index}. #{item}\n"
+      output += "#{index}. #{item}"+"<br>"
       index += 1
     end
     output

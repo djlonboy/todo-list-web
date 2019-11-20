@@ -7,5 +7,6 @@ feature "Add Item" do
     fill_in('item', :with => 'Buy stamps')
     click_button('submit')
     expect(page).to have_content 'Buy stamps'
+
   end
 end
